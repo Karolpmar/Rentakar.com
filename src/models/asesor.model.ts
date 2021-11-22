@@ -43,7 +43,7 @@ export class Asesor extends Entity {
     type: 'string',
     required: true,
   })
-  contrasena: string;
+  clave: string;
 
 
   constructor(data?: Partial<Asesor>) {

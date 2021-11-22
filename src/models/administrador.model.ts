@@ -43,7 +43,7 @@ export class Administrador extends Entity {
     type: 'string',
     required: true,
   })
-  contrasena: string;
+  clave: string;
 
 
   constructor(data?: Partial<Administrador>) {
