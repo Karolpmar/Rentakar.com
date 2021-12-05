@@ -72,7 +72,7 @@ IdentificarCliente(usuario: string, clave: string) {
 
 GenerarTokenJWTadmin(administrador: Administrador) {
   let token = jwt.sign({
-    data: {
+    dataAdmin: {
       id: administrador.id,
       correo: administrador.correo,
       nombre: administrador.nombres + " " + administrador.apellidos
@@ -84,7 +84,7 @@ GenerarTokenJWTadmin(administrador: Administrador) {
 
 GenerarTokenJWTasesor(asesor: Asesor) {
   let token = jwt.sign({
-    data: {
+    dataAsesor: {
       id: asesor.id,
       correo: asesor.correo,
       nombre: asesor.nombres + " " + asesor.apellidos
@@ -96,7 +96,7 @@ GenerarTokenJWTasesor(asesor: Asesor) {
 
 GenerarTokenJWTcliente(cliente: Cliente) {
   let token = jwt.sign({
-    data: {
+    dataCliente: {
       id: cliente.id,
       correo: cliente.correo,
       nombre: cliente.nombres + " " + cliente.apellidos
@@ -107,7 +107,25 @@ GenerarTokenJWTcliente(cliente: Cliente) {
 }
 
 
-ValidarTokenJWT(token: string) {
+ValidarTokenJWTadmin(token: string) {
+  try {
+    let datos = jwt.verify(token, Llaves.claveJWT);
+    return datos;
+  } catch {
+    return false;
+  }
+}
+
+ValidarTokenJWTasesor(token: string) {
+  try {
+    let datos = jwt.verify(token, Llaves.claveJWT);
+    return datos;
+  } catch {
+    return false;
+  }
+}
+
+ValidarTokenJWTcliente(token: string) {
   try {
     let datos = jwt.verify(token, Llaves.claveJWT);
     return datos;
