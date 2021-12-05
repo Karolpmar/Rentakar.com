@@ -19,11 +19,17 @@ import {
 } from '@loopback/rest';
 import {Asesor} from '../models';
 import {AsesorRepository} from '../repositories';
+import {Llaves} from '../config/llaves';
+import {AutenticacionService} from '../services/autenticacion.service';
+import { service } from '@loopback/core';
+const fetch = require('node-fetch');
 
 export class AsesorController {
   constructor(
     @repository(AsesorRepository)
     public asesorRepository : AsesorRepository,
+    @service(AutenticacionService)
+    public servicioAutenticacion: AutenticacionService
   ) {}
 
   @post('/asesores')
@@ -44,7 +50,20 @@ export class AsesorController {
     })
     asesor: Omit<Asesor, 'id'>,
   ): Promise<Asesor> {
-    return this.asesorRepository.create(asesor);
+    let clave = this.servicioAutenticacion.GenerarClave();
+    let claveCifrada = this.servicioAutenticacion.CifrarClave(clave);
+    asesor.clave = claveCifrada;
+    let as = await this.asesorRepository.create(asesor);
+
+    //Notificar Al Usuario
+    let destino = asesor.correo;
+    let asunto = 'Registro en la plataforma';
+    let contenido = `Hola ${asesor.nombres}, su nombre de usuario es: ${asesor.correo}, y su contraseña es: ${asesor.clave};`
+    fetch(`${Llaves.urlServicioNotificaciones}/envio_correos?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
+    .then((data:any)=>{
+      console.log(data);
+    })
+    return as;
   }
 
   @get('/asesores/count')
