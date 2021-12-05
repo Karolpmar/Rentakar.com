@@ -36,9 +36,9 @@ CifrarClave(clave: string){
 
 IdentificarAdministrdor(usuario: string, clave: string) {
   try {
-    let p = this.administradorRepository.findOne({where: {correo: usuario, clave: clave}})
-    if (p) {
-      return p
+    let ad = this.administradorRepository.findOne({where: {correo: usuario, clave: clave}})
+    if (ad) {
+      return ad
     }
     return false;
   } catch {
@@ -48,9 +48,9 @@ IdentificarAdministrdor(usuario: string, clave: string) {
 
 IdentificarAsesor(usuario: string, clave: string) {
   try {
-    let p = this.asesorRepository.findOne({where: {correo: usuario, clave: clave}})
-    if (p) {
-      return p
+    let as = this.asesorRepository.findOne({where: {correo: usuario, clave: clave}})
+    if (as) {
+      return as
     }
     return false;
   } catch {
@@ -60,9 +60,9 @@ IdentificarAsesor(usuario: string, clave: string) {
 
 IdentificarCliente(usuario: string, clave: string) {
   try {
-    let p = this.clienteRepository.findOne({where: {correo: usuario, clave: clave}})
-    if (p) {
-      return p
+    let c = this.clienteRepository.findOne({where: {correo: usuario, clave: clave}})
+    if (c) {
+      return c
     }
     return false;
   } catch {
@@ -70,7 +70,7 @@ IdentificarCliente(usuario: string, clave: string) {
   }
 }
 
-GenerarTokenJWTAdmin(administrador: Administrador) {
+GenerarTokenJWTadmin(administrador: Administrador) {
   let token = jwt.sign({
     data: {
       id: administrador.id,
@@ -79,9 +79,10 @@ GenerarTokenJWTAdmin(administrador: Administrador) {
     }
   },
     Llaves.claveJWT)
+    return token;
 }
 
-GenerarTokenJWTAsesor(asesor: Asesor) {
+GenerarTokenJWTasesor(asesor: Asesor) {
   let token = jwt.sign({
     data: {
       id: asesor.id,
@@ -90,9 +91,10 @@ GenerarTokenJWTAsesor(asesor: Asesor) {
     }
   },
     Llaves.claveJWT)
+    return token;
 }
 
-GenerarTokenJWTCliente(cliente: Cliente) {
+GenerarTokenJWTcliente(cliente: Cliente) {
   let token = jwt.sign({
     data: {
       id: cliente.id,
@@ -101,6 +103,7 @@ GenerarTokenJWTCliente(cliente: Cliente) {
     }
   },
     Llaves.claveJWT)
+    return token;
 }
 
 

@@ -17,9 +17,10 @@ import {
   del,
   requestBody,
   response,
+  HttpErrors,
 } from '@loopback/rest';
 import { serviceProxy } from '@loopback/service-proxy';
-import {Cliente} from '../models';
+import {Cliente, Credenciales} from '../models';
 import {ClienteRepository} from '../repositories';
 import { AutenticacionService } from '../services';
 const fetch = require('node-fetch');
@@ -31,6 +32,34 @@ export class ClienteController {
     @service(AutenticacionService)
     public servicioAutenticacion: AutenticacionService
   ) {}
+
+@post("/identificarCliente", {
+  responses:{
+    '200':{
+      description:"Identificación de usuarios"
+    }
+  }
+})
+async identificarCliente(
+  @requestBody() credenciales:Credenciales
+){
+  let c = await this.servicioAutenticacion.IdentificarCliente(credenciales.usuario, credenciales.clave);
+  if(c) {
+    let token = this.servicioAutenticacion.GenerarTokenJWTcliente(c);
+    return{
+      datos: {
+        nombre: c.nombres,
+        correo: c.correo,
+        id: c.id 
+      },
+      tk: token
+    }
+
+  }else{
+    throw new HttpErrors[401]("Datos inválidos");
+  }
+
+}
 
   @post('/clientes')
   @response(200, {

@@ -16,12 +16,13 @@ import {
   del,
   requestBody,
   response,
+  HttpErrors,
 } from '@loopback/rest';
-import {Administrador} from '../models';
-import {AdministradorRepository} from '../repositories';
 import {Llaves} from '../config/llaves';
 import {AutenticacionService} from '../services/autenticacion.service';
 import { service } from '@loopback/core';
+import {Administrador, Credenciales} from '../models';
+import {AdministradorRepository} from '../repositories';
 const fetch = require('node-fetch');
 
 export class AdministradorController {
@@ -31,6 +32,34 @@ export class AdministradorController {
     @service(AutenticacionService)
     public servicioAutenticacion: AutenticacionService
   ) {}
+
+  @post("/identificarAdministrador", {
+    responses:{
+      '200':{
+        description:"Identificación de usuarios"
+      }
+    }
+  })
+  async identificarAdministrador(
+    @requestBody() credenciales:Credenciales
+  ){
+    let ad = await this.servicioAutenticacion.IdentificarAdministrdor(credenciales.usuario, credenciales.clave);
+    if(ad) {
+      let token = this.servicioAutenticacion.GenerarTokenJWTadmin(ad);
+      return{
+        datos: {
+          nombre: ad.nombres,
+          correo: ad.correo,
+          id: ad.id 
+        },
+        tk: token
+      }
+  
+    }else{
+      throw new HttpErrors[401]("Datos inválidos");
+    }
+  
+  }
 
   @post('/administradors')
   @response(200, {
