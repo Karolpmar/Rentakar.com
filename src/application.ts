@@ -9,6 +9,8 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
+import { AuthenticationComponent, registerAuthenticationStrategy } from '@loopback/authentication';
+import { EstrategiaAdministrador, EstrategiaAsesor, EstrategiaCliente } from './strategies/admin.strategy';
 
 export {ApplicationConfig};
 
@@ -40,5 +42,15 @@ export class RentakarComApp extends BootMixin(
         nested: true,
       },
     };
+
+    registerAuthenticationStrategy(this, EstrategiaAdministrador);
+    this.component(AuthenticationComponent);
+
+    registerAuthenticationStrategy(this, EstrategiaCliente);
+    this.component(AuthenticationComponent);
+
+    registerAuthenticationStrategy(this, EstrategiaAsesor);
+    this.component(AuthenticationComponent);
+
   }
 }

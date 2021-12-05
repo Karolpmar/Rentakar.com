@@ -61,7 +61,7 @@ export class ReservaVehiculoController {
           schema: getModelSchemaRef(Vehiculo, {
             title: 'NewVehiculoInReserva',
             exclude: ['id'],
-            optional: ['VehiculoId']
+            optional: ['reservaId']
           }),
         },
       },

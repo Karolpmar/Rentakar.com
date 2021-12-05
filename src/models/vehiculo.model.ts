@@ -1,5 +1,6 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
 import {Reserva} from './reserva.model';
+import {Administrador} from './administrador.model';
 
 @model()
 export class Vehiculo extends Entity {
@@ -14,7 +15,7 @@ export class Vehiculo extends Entity {
     type: 'string',
     required: true,
   })
-  tipoVehiculo: string;
+  tipo: string;
 
   @property({
     type: 'string',
@@ -49,7 +50,18 @@ export class Vehiculo extends Entity {
   @property({
     type: 'string',
   })
-  VehiculoId?: string;
+  reservaId?: string;
+
+  @hasMany(() => Reserva)
+  reservas: Reserva[];
+
+  @hasMany(() => Administrador)
+  administradors: Administrador[];
+
+  @property({
+    type: 'string',
+  })
+  administradorId?: string;
 
   constructor(data?: Partial<Vehiculo>) {
     super(data);
