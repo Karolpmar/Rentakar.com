@@ -1,88 +1,402 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=”en”>
 
 <head>
-  <title>Caso de estudio ciclo 4</title>
+    <meta charset=”UTF-8″ />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="https://loopback.io/favicon.ico">
+</head>
+<style>
+    body {
 
-  <style>
-    h3 {
-      margin-left: 25px;
-      text-align: center;
+        background-image: url("img/carros.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+        /* Establecemos que el ancho sera del 90% */
+        max-width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
     }
 
-    a, a:visited {
-      color: #3f5dff;
+    .wrapper {
+        width: 100%;
+        max-width: 100%;
+        max-height: 20%;
+        background-color: black;
+        background-size: 20%;
+        border-bottom: red solid 2px;
+        position: relative;
+
     }
 
-    h3 a {
-      margin-left: 10px;
+    .wrapper2 {
+        width: 100%;
+        background-color: black;
+        background-size: 20%;
+        border-bottom: red solid 2px;
+        border-top: red solid 4px;
+        position: relative;
+        color: white;
+        font-size: 15px;
+        line-height: 10pt;
+
+
     }
 
-    a:hover, a:focus, a:active {
-      color: #001956;
+    .redes {
+        color: white;
+        position: absolute;
+        width: 100%;
+        left: 550px;
+        top: 0px;
+        font-size: 15px;
+        font-weight: bold;
     }
 
-    .power {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
+    .redeslogos {
+        color: white;
+        position: absolute;
+        width: 100%;
+        left: 595px;
+        top: 50px;
+        font-size: 10px;
+        font-weight: bold;
+        word-spacing: 30px;
+
+    }
+
+    .login {
+        color: white;
+        position: absolute;
+        width: 100%;
+        left: 1200px;
+        top: 25px;
+        font-size: 10px;
+        font-weight: bold;
+
+    }
+    .registro {
+        color: white;
+        position: absolute;
+        width: 100%;
+        left: 1270px;
+        top: 25px;
+        font-size: 10px;
+        font-weight: bold;
+
+    }
+
+    header .logo {
+        text-align: left;
+        max-height: 10%;
+        min-height: 10%;
+        margin: 0 5px 0 2px;
+
+    }
+
+    .redondo1 {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 80%;
+        text-align: center;
+        background-color: red;
+
+    }
+
+    .redondo2 {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 80%;
+        text-align: center;
+        background-color: black;
+
+    }
+
+    .redondo3 {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 80%;
+        text-align: center;
+        background-color: white;
+
+    }
+
+
+    .row {
+        justify-content: center;
+    }
+
+    .container {
+        width: 100%;
+        /* Establecemos que el ancho sera del 90% */
+        max-width: 100%;
+        /* Aqui le decimos que el ancho máximo sera de 1000px */
+        max-height: 20%;
+        margin: auto;
+        /* Centramos los elementos */
+
+        background-color: black;
+        background-size: 20%;
+        border-top: red solid 2px;
+        color: white;
+        position: fixed;
+        width: 100%;
+        left: 0px;
+        bottom: 0px;
+        line-height: 1pt;
+        font-size: 15px;
+    }
+
+    .container2 {
+
+        color: white;
+        position: fixed;
+        width: 100%;
+        left: 800px;
+        bottom: 0px;
+        line-height: 1pt;
+        font-size: 15px;
     }
 
     .info {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%)
-    }
-
-    .info h1 {
-      text-align: center;
-      margin-bottom: 0;
-    }
-
-    .info p {
-      text-align: center;
-      margin-bottom: 3em;
-      margin-top: 1em;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: rgb(29, 30, 32);
         color: white;
-      }
-
-      a, a:visited {
-        color: #4990e2;
-      }
-
-      a:hover, a:focus, a:active {
-        color: #2b78ff;
-      }
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 10pt;
     }
-  </style>
-</head>
+</style>
 
 <body>
-  <div class="info">
-    <h1>rentakar-com</h1>
-    <p>Version 1.0.0</p>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="img/logo.jpeg" width="15%" height="15%" />
 
-    <h3>OpenAPI spec: <a href="./openapi.json">/openapi.json</a></h3>
-    <h3>API Explorer: <a href="./explorer">/explorer</a></h3>
-  </div>
+                <footer>
+                    <div class="redes">
+                        <div>
+                            <p> </p>
+                            <p> Siguenos en nuestras redes sociales: </p>
 
-  <footer class="power">
-    <a href="https://loopback.io" target="_blank">
-      <img src="https://loopback.io/images/branding/powered-by-loopback/blue/powered-by-loopback-sm.png" />
-    </a>
-  </footer>
+                        </div>
+                </footer>
+                <footer>
+                    <div class="redeslogos">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="36px" height="38px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"
+                                fill="currentColor" />
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="30px" height="30px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 1024 1024">
+                            <path
+                                d="M512 1024q-104 0-199-40.5t-163.5-109T40.5 711T0 512t40.5-199t109-163.5T313 40.5T512 0t199 40.5t163.5 109t109 163.5t40.5 199t-40.5 199t-109 163.5t-163.5 109t-199 40.5zm256-704q0-26-18.5-45T704 256H320q-26 0-45 19t-19 45v64h114q58-64 142-64t142 64h114v-64zM384 512q0 53 37.5 90.5T512 640t90.5-37.5T640 512t-37.5-90.5T512 384t-90.5 37.5T384 512zm384-64h-76q12 33 12 64q0 80-56 136t-136 56t-136-56t-56-136q0-31 12-64h-76v256q0 27 18.5 45.5T320 768h384q27 0 45.5-18.5T768 704V448z"
+                                fill="currentColor" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="34px" height="36px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 1024 1024">
+                            <path
+                                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64zm215.3 337.7c.3 4.7.3 9.6.3 14.4c0 146.8-111.8 315.9-316.1 315.9c-63 0-121.4-18.3-170.6-49.8c9 1 17.6 1.4 26.8 1.4c52 0 99.8-17.6 137.9-47.4c-48.8-1-89.8-33-103.8-77c17.1 2.5 32.5 2.5 50.1-2a111 111 0 0 1-88.9-109v-1.4c14.7 8.3 32 13.4 50.1 14.1a111.13 111.13 0 0 1-49.5-92.4c0-20.7 5.4-39.6 15.1-56a315.28 315.28 0 0 0 229 116.1C492 353.1 548.4 292 616.2 292c32 0 60.8 13.4 81.1 35c25.1-4.7 49.1-14.1 70.5-26.7c-8.3 25.7-25.7 47.4-48.8 61.1c22.4-2.4 44-8.6 64-17.3c-15.1 22.2-34 41.9-55.7 57.6z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </footer>
+                <footer>
+                    <div class="login">
+                        <a href="login.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                aria-hidden="true" role="img" width="50px" height="50px"
+                                preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path
+                                    d="M10 11H2.05c.5-5.053 4.764-9 9.95-9c5.523 0 10 4.477 10 10s-4.477 10-10 10c-5.185 0-9.449-3.947-9.95-9H10v3l5-4l-5-4v3z"
+                                    fill="white" />
+                            </svg>
+                        </div>
+                     <div class="registro">
+                        </a>
+                        <a href="registro.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                aria-hidden="true" role="img" width="50px" height="50px"
+                                preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 15c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15zm0-3a4 4 0 1 1 0-8a4 4 0 0 1 0 8zm8 2a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2h-1v1z"
+                                    fill="white" fill-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </footer>
+            </div>
+            <div class="wrapper2">
+
+                <nav class="navbar navbar-expand-lg navbar-white bg-black">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link
+
+                        active" style="color: white;" aria-current="page" href="#"><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                            width="1em" height="15px" preserveAspectRatio="xMidYMid meet"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M21.743 12.331l-9-10c-.379-.422-1.107-.422-1.486 0l-9 10a.998.998 0 0 0-.17 1.076c.16.361.518.593.913.593h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a.998.998 0 0 0 .743-1.669z"
+                                                fill="currentColor" />
+                                        </svg> INICIO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: white;" href="#"> <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                            width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
+                                            viewBox="0 0 24 24">
+                                            <g fill="none">
+                                                <path d="M2 6s1.5-2 5-2s5 2 5 2v14s-1.5-1-5-1s-5 1-5 1V6z"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 6s1.5-2 5-2s5 2 5 2v14s-1.5-1-5-1s-5 1-5 1V6z"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </g>
+                                        </svg> RESERVAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: white;" href="#"> <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                            width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .4C4.697.4.399 4.698.399 10A9.6 9.6 0 0 0 10 19.601c5.301 0 9.6-4.298 9.6-9.601c0-5.302-4.299-9.6-9.6-9.6zm.896 3.466c.936 0 1.211.543 1.211 1.164c0 .775-.62 1.492-1.679 1.492c-.886 0-1.308-.445-1.282-1.182c0-.621.519-1.474 1.75-1.474zM8.498 15.75c-.64 0-1.107-.389-.66-2.094l.733-3.025c.127-.484.148-.678 0-.678c-.191 0-1.022.334-1.512.664l-.319-.523c1.555-1.299 3.343-2.061 4.108-2.061c.64 0 .746.756.427 1.92l-.84 3.18c-.149.562-.085.756.064.756c.192 0 .82-.232 1.438-.719l.362.486c-1.513 1.512-3.162 2.094-3.801 2.094z"
+                                                fill="currentColor" />
+                                        </svg> NOSOTROS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: white;" href="#"> <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                            width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
+                                            viewBox="0 0 16 16">
+                                            <g fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42a18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                            </g>
+                                        </svg> CONTACTANOS</a>
+                                </li>
+
+                            </ul>
+                            <form class="d-flex">
+
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-danger" style="color: white;" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+    </header>
+    <section class="pt-5">
+        <div class="cuerpo">
+            <div class="row">
+                <br>
+                <br>
+
+                <a href="llamadas.html">
+                    <button class="redondo1" style="margin: 20px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="50px" height="50px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 480 512">
+                            <path
+                                d="M438.66 212.33l-11.24-28.1l-19.93-49.83C390.38 91.63 349.57 64 303.5 64h-127c-46.06 0-86.88 27.63-103.99 70.4l-19.93 49.83l-11.24 28.1C17.22 221.5 0 244.66 0 272v48c0 16.12 6.16 30.67 16 41.93V416c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h256v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-54.07c9.84-11.25 16-25.8 16-41.93v-48c0-27.34-17.22-50.5-41.34-59.67zm-306.73-54.16c7.29-18.22 24.94-30.17 44.57-30.17h127c19.63 0 37.28 11.95 44.57 30.17L368 208H112l19.93-49.83zM80 319.8c-19.2 0-32-12.76-32-31.9S60.8 256 80 256s48 28.71 48 47.85s-28.8 15.95-48 15.95zm320 0c-19.2 0-48 3.19-48-15.95S380.8 256 400 256s32 12.76 32 31.9s-12.8 31.9-32 31.9z" />
+                        </svg>
+                </a>
+                </button>
+
+                <button class="redondo2" style="margin: 20px">
+                    <a href="login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="50px" height="50px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 640 512">
+                            <path
+                                d="M624 224h-16v-64c0-17.67-14.33-32-32-32h-73.6L419.22 24.02A64.025 64.025 0 0 0 369.24 0H256c-17.67 0-32 14.33-32 32v96H48c-8.84 0-16 7.16-16 16v80H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h16.72c29.21-38.65 75.1-64 127.28-64s98.07 25.35 127.28 64h65.45c29.21-38.65 75.1-64 127.28-64s98.07 25.35 127.28 64H624c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zm-336-96V64h81.24l51.2 64H288zm304 224h-5.2c-2.2-7.33-5.07-14.28-8.65-20.89l3.67-3.67c6.25-6.25 6.25-16.38 0-22.63l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-3.67 3.67A110.85 110.85 0 0 0 512 277.2V272c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v5.2c-7.33 2.2-14.28 5.07-20.89 8.65l-3.67-3.67c-6.25-6.25-16.38-6.25-22.63 0l-22.63 22.63c-6.25 6.25-6.25 16.38 0 22.63l3.67 3.67A110.85 110.85 0 0 0 373.2 352H368c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h5.2c2.2 7.33 5.07 14.28 8.65 20.89l-3.67 3.67c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l3.67-3.67c6.61 3.57 13.57 6.45 20.9 8.65v5.2c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-5.2c7.33-2.2 14.28-5.07 20.9-8.65l3.67 3.67c6.25 6.25 16.38 6.25 22.63 0l22.63-22.63c6.25-6.25 6.25-16.38 0-22.63l-3.67-3.67a110.85 110.85 0 0 0 8.65-20.89h5.2c8.84 0 16-7.16 16-16v-32c-.02-8.84-7.18-16-16.02-16zm-112 80c-26.51 0-48-21.49-48-48s21.49-48 48-48s48 21.49 48 48s-21.49 48-48 48zm-208-80h-5.2c-2.2-7.33-5.07-14.28-8.65-20.89l3.67-3.67c6.25-6.25 6.25-16.38 0-22.63l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-3.67 3.67A110.85 110.85 0 0 0 192 277.2V272c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v5.2c-7.33 2.2-14.28 5.07-20.89 8.65l-3.67-3.67c-6.25-6.25-16.38-6.25-22.63 0L58.18 304.8c-6.25 6.25-6.25 16.38 0 22.63l3.67 3.67a110.85 110.85 0 0 0-8.65 20.89H48c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h5.2c2.2 7.33 5.07 14.28 8.65 20.89l-3.67 3.67c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l3.67-3.67c6.61 3.57 13.57 6.45 20.9 8.65v5.2c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-5.2c7.33-2.2 14.28-5.07 20.9-8.65l3.67 3.67c6.25 6.25 16.38 6.25 22.63 0l22.63-22.63c6.25-6.25 6.25-16.38 0-22.63l-3.67-3.67a110.85 110.85 0 0 0 8.65-20.89h5.2c8.84 0 16-7.16 16-16v-32C288 359.16 280.84 352 272 352zm-112 80c-26.51 0-48-21.49-48-48s21.49-48 48-48s48 21.49 48 48s-21.49 48-48 48z"
+                                fill="yellow" />
+                        </svg>
+                    </a>
+                </button>
+                <br>
+                <button class="redondo3" style="margin: 20px">
+                    <a href="login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="50px" height="50px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 15 15">
+                            <path
+                                d="M7.5 2c-.676-.01-.676 1.01 0 1H9v1.266L6.197 6.6L5.223 4H5.5c.676.01.676-1.01 0-1h-2c-.676-.01-.676 1.01 0 1h.652l.891 2.375A3.45 3.45 0 0 0 3.5 6C1.573 6 0 7.573 0 9.5S1.573 13 3.5 13S7 11.427 7 9.5c0-.67-.2-1.291-.53-1.824l2.821-2.35l.463 1.16C8.71 7.094 8 8.211 8 9.5c0 1.927 1.573 3.5 3.5 3.5S15 11.427 15 9.5S13.427 6 11.5 6c-.283 0-.554.043-.818.107L10 4.402V2.5a.5.5 0 0 0-.5-.5h-2zm-4 5a2.48 2.48 0 0 1 1.555.553L3.18 9.115c-.511.427.128 1.195.64.77l1.875-1.563c.188.352.305.75.305 1.178C6 10.887 4.887 12 3.5 12S1 10.887 1 9.5S2.113 7 3.5 7zm8 0C12.887 7 14 8.113 14 9.5S12.887 12 11.5 12S9 10.887 9 9.5c0-.877.447-1.642 1.125-2.088l.91 2.274c.246.623 1.18.25.93-.372l-.908-2.27C11.2 7.02 11.348 7 11.5 7z" />
+                        </svg>
+                    </a>
+                </button>
+                <br>
+                <button class="redondo1" style="margin: 20px">
+                    <a href="login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="50px" height="50px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M8.365 10L11.2 8H17v2h-5.144L9 12H2v-2h6.365zm.916 5.06l2.925-1.065l.684 1.88l-2.925 1.064a4.5 4.5 0 1 1-.684-1.88zM5.5 20a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5zm13 2a4.5 4.5 0 1 1 0-9a4.5 4.5 0 0 1 0 9zm0-2a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5zM4 11h6l2.6-1.733l.28-1.046l1.932.518l-1.922 7.131l-1.822-.888l.118-.44L9 16l-1-2H4v-3zm12.092-5H20v3h-2.816l1.92 5.276l-1.88.684L15.056 9H15v-.152L13.6 5H11V3h4l1.092 3z"
+                                fill="yellow" />
+                        </svg>
+                    </a>
+                </button>
+                <br>
+                <button class="redondo2" style="margin: 20px">
+                    <a href="registro.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" width="70px" height="70px" preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M3 7c-1.11 0-2 .89-2 2v8h2a3 3 0 0 0 3 3a3 3 0 0 0 3-3h6a3 3 0 0 0 3 3a3 3 0 0 0 3-3h2v-4c0-1.11-.89-2-2-2l-3-4H3m0 1.5h4V11H3V8.5m6 0h4V11H9V8.5m6 0h2.5l1.96 2.5H15V8.5m-9 7A1.5 1.5 0 0 1 7.5 17A1.5 1.5 0 0 1 6 18.5A1.5 1.5 0 0 1 4.5 17A1.5 1.5 0 0 1 6 15.5m12 0a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5a1.5 1.5 0 0 1-1.5-1.5a1.5 1.5 0 0 1 1.5-1.5z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </button>
+
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="info">
+
+                <p>RESERVA TU VEHICULO FAVORITO</p>
+                <p>AL MEJOR PRECIO</p>
+                <br>
+            </div>
+        </div>
+
+    </section>
 </body>
 
 </html>

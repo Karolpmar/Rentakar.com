@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8″ />
+    <title>RENTAKAR.COM/REGISTRO</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+
+        background-image: url("img/motos.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        width:100%; /* Establecemos que el ancho sera del 90% */
+	    max-width:100%;
+        overflow-y: scroll; overflow-x:hidden;
+
+
+}
+
+.wrapper {
+	width:100%; /* Establecemos que el ancho sera del 90% */
+	max-width:100%; /* Aqui le decimos que el ancho máximo sera de 1000px */
+    max-height: 20%;
+	margin:auto; /* Centramos los elementos */
+
+    background-color: black;
+    background-size: 20%;
+    border-bottom: red solid 2px;
+    position: fixed;
+    top: 0px;
+
+}
+
+header .logo {
+    text-align: center;
+	max-height: 10%;
+  min-height: 10%;
+  margin: 0 5px 0 2px;
+}
+
+.info
+{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align:center;
+    line-height: 10pt;
+}
+
+.row
+{
+   justify-content: center;
+}
+
+.container
+{
+    width:100%; /* Establecemos que el ancho sera del 90% */
+	max-width:100%; /* Aqui le decimos que el ancho máximo sera de 1000px */
+    max-height: 20%;
+	margin:auto;
+
+    background-color: black;
+    background-size: 20%;
+    border-top: red solid 2px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    line-height: 1pt;
+    font-size: 15px;
+}
+.piepagina
+{
+    color: white;
+    position: fixed;
+    width: 100%;
+    text-align:center;
+    bottom: 0px;
+    line-height: 10pt;
+    font-size: 15px;
+
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+
+
+
+.login-form {
+  min-height: 10rem;
+  margin: auto;
+  max-width: 100%;
+  padding: .30rem;
+  margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #666666;
+    width: 600px;
+
+}
+.login-text {
+
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+
+}
+
+.formulario{
+    background: grayscale;
+  border: 0 solid;
+  border-bottom: 1px solid rgba(white, .5);
+  color: white;
+  display: overlay;
+  margin: 1rem;
+  padding: .05rem;
+  transition: 250ms background ease-in;
+  width: calc(40%);
+  text-decoration-color: white;
+
+
+
+
+}
+
+
+.login-forgot-pass {
+
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  bottom: 40px;
+  font-size: 85%;
+  left: 0;
+  opacity: 0.6;
+  padding: .3rem;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+
+}
+.login-submit {
+  border: 1px solid white;
+  border-radius: 15px;
+  background: rgb(243, 21, 21);
+  color: yellow;
+  display: block;
+  margin: 1rem auto;
+  min-width: 2px;
+  padding: .2rem;
+
+}
+
+
+
+
+
+
+.underlay-black {
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+
+
+
+
+</style>
+
+
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="img/logo.jpeg" width="17%" height="20%" />
+            </div>
+    </header>
+    <body>
+    <section class= "pt-5" >
+        <div class="cuerpo">
+    <div class="row">
+    </section>
+
+        <div class="info" >
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+            <p>BIENVENIDO A RENTAKAR.COM</p>
+            <p>Registrate diligenciado el siguiente formulario: </p>
+            <br>
+
+        </div>
+            <div class="Formulario">
+                <form class="login-form">
+
+                      <form class="row g-3 needs-validation" novalidate>
+
+                        <label for="txtDocumento" style="color: white;" class="form-label">Numero de Documento:</label>
+                          <input type="text" class="form-control" id="txtDocumento"  required>
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                        <label for="txtNombres" style="color: white;" class="form-label">Nombres:</label>
+                          <input type="text" class="form-control" id="txtNombres"  required>
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+
+                          <label for="txtApellidos" style="color: white;" class="form-label">Apellidos:</label>
+                          <input type="text" class="form-control" id="txtApellidos"  required>
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                          <label for="dateFecha" style="color: white;" class="form-label">Fecha de Nacimiento:</label>
+                          <input type="date" class="form-control" id="dateFecha"  required>
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                          <label for="txtGenero" style="color: white;" class="form-label">Género:</label>
+                          <input type="text" class="form-control" id="txtGenero"  required>
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                          <label for="txtLicencia" style="color: white;" class="form-label">Número de Licencia:</label>
+                          <input type="text" class="form-control" id="txtLicencia"  required>
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                          <label for="txtCelular" style="color: white;" class="form-label">Celular:</label>
+                          <input type="text" class="form-control" id="txtCelular"  required>
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                          <label for="txtDireccion" style="color: white;" class="form-label">Dirección:</label>
+                          <input type="text" class="form-control" id="txtDireccion"  required>
+
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                          <label for="txtTarjeta1" style="color: white;" class="form-label">Tarjeta 1:</label>
+                          <input type="text" class="form-control" id="txtTarjeta1"  required>
+
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+                          <label for="txtTarjeta2" style="color: white;" class="form-label">Tarjeta 2:</label>
+                          <input type="text" class="form-control" id="txtTarjeta2">
+
+                          <div class="invalid-feedback">
+                            Este Campo es Requerido
+                          </div>
+
+
+                          <label for="txtCorreo" style="color: white;" class="form-label">Correo electrónico:</label>
+                          <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <input type="text" class="form-control" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                              Este campo es Requerido.
+
+                          </div>
+                        </div>
+
+
+                          <div class="form-check">
+                            <input class="form-check-input"style="color: white;" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck" style="color: white;">
+                              Estoy de acuerdo con los terminos y condiciones
+                            </label>
+                            <div class="invalid-feedback" style="color: white;">
+                              Debe estar de acuedo con los terminos y condiciones
+                            </div>
+                          </div>
+
+                          <button class="login-submit" type="submit">REGISTRASE</button>
+
+                      </form>
+
+
+
+                </form>
+                <br>
+
+        <div class="container">
+          <p>
+            <br>
+          </p>
+
+        </div>
+        </div>
+
+
+
+</body>
+
+</html>
